@@ -2,13 +2,13 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img_rgb = cv2.imread('scene_test.png')
+img_rgb = cv2.imread('scene9.png')
 img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
+threshold = 0.87
 
 template = cv2.imread('cards/mahjong.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
@@ -17,7 +17,6 @@ for pt in zip(*loc[::-1]):
 template = cv2.imread('cards/dragon.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
@@ -26,7 +25,6 @@ for pt in zip(*loc[::-1]):
 template = cv2.imread('cards/phoenix.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
@@ -35,7 +33,6 @@ for pt in zip(*loc[::-1]):
 template = cv2.imread('cards/dogs.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
@@ -44,7 +41,6 @@ for pt in zip(*loc[::-1]):
 template = cv2.imread('cards/red2.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
@@ -53,16 +49,62 @@ for pt in zip(*loc[::-1]):
 template = cv2.imread('cards/green2.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
     print "Green 2 detected"
 
+template = cv2.imread('cards/green4.png',0)
+w, h = template.shape[::-1]
+res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
+loc = np.where( res >= threshold)
+for pt in zip(*loc[::-1]):
+    cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
+    print "Green 4 detected"
+
+template = cv2.imread('cards/green5.png',0)
+w, h = template.shape[::-1]
+res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
+loc = np.where( res >= threshold)
+for pt in zip(*loc[::-1]):
+    cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
+    print "Green 5 detected"
+
+template = cv2.imread('cards/green6.png',0)
+w, h = template.shape[::-1]
+res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
+loc = np.where( res >= threshold)
+for pt in zip(*loc[::-1]):
+    cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
+    print "Green 6 detected"
+
+template = cv2.imread('cards/green7.png',0)
+w, h = template.shape[::-1]
+res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
+loc = np.where( res >= threshold)
+for pt in zip(*loc[::-1]):
+    cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
+    print "Green 7 detected"
+
+template = cv2.imread('cards/green8.png',0)
+w, h = template.shape[::-1]
+res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
+loc = np.where( res >= threshold)
+for pt in zip(*loc[::-1]):
+    cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
+    print "Green 8 detected"
+
+template = cv2.imread('cards/green9.png',0)
+w, h = template.shape[::-1]
+res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
+loc = np.where( res >= threshold)
+for pt in zip(*loc[::-1]):
+    cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
+    print "Green 9 detected"
+
 template = cv2.imread('cards/blue2.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
@@ -71,7 +113,6 @@ for pt in zip(*loc[::-1]):
 template = cv2.imread('cards/black2.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
@@ -80,7 +121,6 @@ for pt in zip(*loc[::-1]):
 template = cv2.imread('cards/redQ.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
@@ -89,7 +129,6 @@ for pt in zip(*loc[::-1]):
 template = cv2.imread('cards/green4.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
@@ -98,7 +137,6 @@ for pt in zip(*loc[::-1]):
 template = cv2.imread('cards/blackA.png',0)
 w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.95
 loc = np.where( res >= threshold)
 for pt in zip(*loc[::-1]):
     cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)

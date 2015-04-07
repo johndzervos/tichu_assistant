@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img_rgb = cv2.imread('scenes/mainscene9.png')
+img_rgb = cv2.imread('scenes/mainscene8.png')
 img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
 threshold = 0.85
 
